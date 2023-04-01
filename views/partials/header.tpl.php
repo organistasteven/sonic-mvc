@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-   <link rel="stylesheet" href="public/css/normelize1.css">
+  <link rel="stylesheet" href="/public/assets/css/normelize1.css">
+  <link rel="stylesheet" href="<?php echo $_SERVER["BASE_URI"] ?>/assets/css/styles.css">
+
    
   <title>Sonic</title>
 </head>
@@ -16,11 +18,11 @@
 
 <span>
     <nav>
-        <a href="<?php echo $_SERVER["BASE_URI"] ?>/home">Acceuil</a>
+        <a href="<?php echo $_SERVER["BASE_URI"] ?>/">Acceuil</a>
         <a href="<?php echo $_SERVER["BASE_URI"] ?>/creators">Créateurs</a>
     </nav>
 </span>
 
 </div>
 
-  <header>
+  

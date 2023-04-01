@@ -23,7 +23,19 @@ use Kint\Kint;
     $router = new AltoRouter();
 
   
-
+  
+    if (isset($_SERVER['REQUEST_URI'])) {
+        $scriptName = $_SERVER['SCRIPT_NAME'];
+        $requestUri = $_SERVER['REQUEST_URI'];
+        if (strpos($requestUri, $scriptName) === 0) {
+            $_SERVER['BASE_URI'] = $scriptName;
+        } else {
+            $pos = strpos($requestUri, '?');
+            $_SERVER['BASE_URI'] = substr($requestUri, 0, $pos);
+        }
+    } else {
+        $_SERVER['BASE_URI'] = '';
+    }
 
     $router->setBasePath($_SERVER["BASE_URI"]);
 
